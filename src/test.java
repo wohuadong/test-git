@@ -49,18 +49,7 @@ public class test {
 
 
     public static void main(String[] args) {
-        int n = 12; //1100 12
-        System.out.println(n);
-        n |= n>>>1;//1110 14
-        System.out.println(n);
-        n |= n>>>2;//1111 15
-        System.out.println(n);
-        n |= n>>>4;
-        System.out.println(n);
-        int a = 5%2;
-        int b = 5&(2-1); //101 & 001
-        System.out.println(a);
-        System.out.println(b);
+        System.out.println(123456);
     }
 
 }
