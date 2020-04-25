@@ -49,19 +49,7 @@ public class test {
 
 
     public static void main(String[] args) {
-        PizzaStatus status = PizzaStatus.ORDERED;
-        System.out.println(PizzaStatus.getName(1));
-        switch(status){
-            case ORDERED:
-                System.out.println(5);break;
-            case READY: System.out.println(2);break;
-            case DELIVERED: System.out.println(0);break;
-            default:break;
-        }
-        System.out.println(PizzaStatus.ORDERED.name());//ORDERED
-        System.out.println(PizzaStatus.ORDERED);//ORDERED
-        System.out.println(PizzaStatus.ORDERED.name().getClass());//class java.lang.String
-        System.out.println(PizzaStatus.ORDERED.getClass());//class shuang.kou.enumdemo.enumtest.PizzaStatus
+        System.out.println(123456);
     }
 
 }
