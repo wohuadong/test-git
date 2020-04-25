@@ -1,3 +1,7 @@
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @Description:
  * @Author: DongHang
@@ -47,9 +51,38 @@ public class test {
         }
     }
 
-
+    public static void getCap(List list){
+        try {
+            Class<?> clazz = Class.forName("java.util.ArrayList");
+            Field elementData = clazz.getDeclaredField("elementData");
+            elementData.setAccessible(true);
+            Object[] array = (Object[])elementData.get(list);
+            System.out.println(array.length);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
     public static void main(String[] args) {
-        System.out.println(123456);
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+
+        getCap(arrayList);
+        System.out.printf("Before add:arrayList.size() = %d\n",arrayList.size());
+
+        arrayList.add(1);
+        arrayList.add(3);
+        arrayList.add(5);
+        arrayList.add(7);
+        arrayList.add(9);
+        arrayList.add(1);
+        arrayList.add(1);
+        arrayList.add(3);
+        arrayList.add(5);
+        getCap(arrayList);
+        System.out.printf("After add:arrayList.size() = %d\n",arrayList.size());
     }
 
 }
